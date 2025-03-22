@@ -188,4 +188,121 @@ button:hover {
     cursor: pointer;
 }
 
+.container {
+    width: 80%;
+    max-width: 600px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Existing shadow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Add transition for box-shadow */
+    margin-top: 20px;
+}
 
+.container:hover {
+    transform: translateY(-5px); /* Existing hover effect */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+.social-icons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    z-index: 1000; /* Ensure it's on top of other elements */
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: rgba(255, 255, 255, 1); /* Opaque white on hover */
+}
+.floating-box {
+    position: fixed;
+    top: 50%;
+    left: 20px; /* Adjust left position as needed */
+    transform: translateY(-50%); /* Center vertically */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 999; /* Ensure it's on top of other content */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.floating-box:hover {
+    transform: translateY(-55%); /* Slight upward movement on hover */
+}
+
+.floating-logo {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    line-height: 1.2;
+}
+
+
+.fancy-scam {
+    background: linear-gradient(135deg, #64b5f6, #42a5f5); /* Gradient background */
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Subtle text shadow */
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.fancy-scam:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.fancy-icon {
+    font-size: 4em;
+    margin-bottom: 15px;
+    color: #e1f5fe; /* Lighter icon color */
+}
+
+.fancy-heading {
+    font-size: 2em;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.fancy-text {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.check-button {
+    background-color: #e1f5fe; /* Light button background */
+    color: #42a5f5; /* Button text color */
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.check-button:hover {
+    background-color: #bbdefb; /* Slightly darker button background on hover */
+    transform: scale(1.05); /* Slight scale on hover */
+}
+/* ... rest of your CSS ... */

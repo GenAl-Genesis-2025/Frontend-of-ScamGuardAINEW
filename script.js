@@ -112,5 +112,20 @@ window.addEventListener('click', function(event) {
         helpModal.style.display = 'none';
     }
 });
+//... existing code ...
+
+analyzeButton.addEventListener('click', function() {
+    //... existing code ...
+    document.getElementById('copyButton').style.display = 'block';
+});
+
+document.getElementById('copyButton').addEventListener('click', function() {
+    const resultText = document.getElementById('result').textContent;
+    navigator.clipboard.writeText(resultText).then(function() {
+        alert('Result copied to clipboard!');
+    }).catch(function(err) {
+        console.error('Could not copy text: ', err);
+    });
+});
 
 //Add the help button to your input-group in html.
