@@ -1,65 +1,23 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ScamGuard AI</title>
+    <title>PLACEHOLDER</title>
     <link rel="stylesheet" href="./style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="./start.js"></script>
 </head>
 <body>
-
-
-    <div id="helpModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>This AI analyzes text to detect potential scams...</p>
-            <p>Enter text into the box to begin.</p>
-        </div>
-    </div>
-
-
-    <div class="container">
-        <div class="container">
-            <div class="content-grid">
-                <div class="scam-check fancy-scam">
-                    <div class="scam-icon fancy-icon">?</div>
-                    <h2 class="fancy-heading">Is it a scam?</h2>
-                    <p class="fancy-text">Check instantly if something you've received is a scam or not.</p>
-                    <button class="check-button">Check Now</button>
-                </div>
+    <div class="intro-container">
+        <div class="intro-content">
+            <!-- Title and subtitle in the same box -->
+            <div class="text-box">
+                <h1>Welcome to PLACEHOLDER</h1>
+                <p>Your AI-powered crypto scam detection assistant.</p>
             </div>
-            </div>
-        <h1>ScamGuard AI</h1>
-        <textarea id="inputText" placeholder="Enter the name of the coin"></textarea>
-        <div class="input-group">
-            <button id="analyzeButton">Analyze</button>
-            <button id="clearButton">Clear</button>
-        </div>
-        <div id="result"></div>
-        <div id="probability" style="display:none;">
-            <h2>Scam Probability</h2>
-            <canvas id="probabilityChart"></canvas>
-        </div>
-        <div id="queryHistory">
-            <h2>Query History</h2>
-            <ul id="historyList"></ul>
+            <!-- Button below the text box -->
+            <button id="startButton">Get Started</button>
         </div>
     </div>
-    
-    <div class="social-icons">
-        <a href="#" class="social-icon">X</a>
-        <a href="#" class="social-icon">f</a>
-        <a href="#" class="social-icon">✉</a>
-    </div>
-    <script src="./script.js"></script>
-    <div class="floating-box">
-        <div class="floating-logo">
-            GET<br>
-            SAFE<br>
-            ONLINE
-        </div>
-        </div>
 </body>
 </html>

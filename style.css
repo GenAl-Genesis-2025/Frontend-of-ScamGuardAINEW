@@ -1,4 +1,91 @@
 /* style.css */
+
+/* welcome screen styling */
+/* Make sure the page covers the full screen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full-screen black overlay */
+.intro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: white;  /* Change background color to white */
+    color: black;  /* Change text color to black for contrast */
+    background-image: url('hands.png');
+    background-size: cover;  /* Keep the image covering the entire screen */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* Content inside the intro screen */
+.intro-content {
+    text-align: center; /* Ensure content inside intro-content is centered */
+    max-width: 90%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center everything horizontally */
+    justify-content: center; /* Center content vertically */
+}
+
+/* Text box for title and subtitle */
+.text-box {
+    background-color: rgb(255, 255, 255, 0.8); /* Semi-transparent background behind text */
+    border-radius: 25px; /* Rounded corners */
+    padding: 20px; /* Padding inside the text box */
+    margin-bottom: 20px; /* Spacing between the box and the button */
+    display: inline-block; /* Ensure text box wraps around the content */
+    text-align: center; /* Center text inside the box */
+    max-width: 100%; /* Allow text box to scale with screen size */
+    width: 100%; /* Make the box take full width */
+}
+
+/* Button styling */
+#startButton {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 20px; /* Space between the button and text box */
+}
+
+/* Button hover effect */
+#startButton:hover {
+    background-color: gray;
+    color: white;
+    border-color: gray;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .text-box {
+        width: 90%; /* Allow more space for text on smaller screens */
+        padding: 15px;
+    }
+
+    #startButton {
+        width: 80%; /* Make button take up more space on smaller screens */
+        padding: 12px 30px;
+    }
+}
+
+
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
