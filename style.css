@@ -27,6 +27,11 @@
     left: 0;
 }
 
+button {
+    margin: 8px; /* Adjust this value as needed */
+}
+
+
 /* Content inside the intro screen */
 .intro-content {
     text-align: center; /* Ensure content inside intro-content is centered */
