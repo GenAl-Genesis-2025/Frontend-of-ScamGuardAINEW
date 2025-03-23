@@ -19,34 +19,47 @@
     </div>
 
     <!-- Main Content -->
-    <div class="container">
-        <div class="content-grid">
-            <div class="scam-check fancy-scam">
-                <div class="scam-icon fancy-icon">?</div>
-                <h2 class="fancy-heading">Is it a scam?</h2>
-                <p class="fancy-text">Check instantly if a cryptocurrenct is a scam or not.</p>
-            </div>
-        </div>
+    <html>
+        <head>
+           <meta charset="UTF-8">
+           <meta name="viewport" content="width=device-width, initial-scale=1.0">
+           <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+           <title>AI Generator</title>
+           <style>
+              
+           </style>
+        </head>
+        <body>
+           <div class="page-container">
+              <div class="content-section">
+                 <div class="hero-content">
+                    <h1 class="hero-title">Generate Amazing Content with AI</h1>
+                    <p class="hero-subtitle">Transform your ideas into reality with our powerful AI generator</p>
+                 </div>
+                 
+                 <div class="input-container">
+                    <div class="input-row">
+                       <textarea class="text-input" placeholder="Enter your prompt here..."></textarea>
+                       <button class="generate-btn">Generate</button>
+                    </div>
+                    
+                    <div class="prompt-section">
+                       <p class="prompt-label">Try these prompts:</p>
+                       <div class="prompt-chips">
+                          <div class="prompt-chip">Write a blog post</div>
+                          <div class="prompt-chip">Create a story</div>
+                          <div class="prompt-chip">Generate code</div>
+                          <div class="prompt-chip">Design ideas</div>
+                          <div class="prompt-chip">Business plan</div>
+                       </div>
+                    </div>
+                 </div>
+                 
+            
+           </div>
+        </body>
+     </html>
 
-        <h1>Laplace's Demon</h1>
-        <textarea id="inputText" placeholder="Enter the name of the coin..."></textarea>
-        <div class="input-group">
-            <button id="analyzeButton">Analyze</button>
-            <button id="clearButton">Clear</button>
-        </div>
-
-        <div id="result"></div>
-
-        <div id="probability" style="display:none;">
-            <h2>Scam Probability</h2>
-            <canvas id="probabilityChart"></canvas>
-        </div>
-
-        <div id="queryHistory">
-            <h2>Query History</h2>
-            <ul id="historyList"></ul>
-        </div>
-    </div>
 
     <!-- Social Icons -->
     <div class="social-icons">
