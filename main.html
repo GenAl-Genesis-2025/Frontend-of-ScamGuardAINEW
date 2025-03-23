@@ -25,26 +25,39 @@
             <div class="content-section">
               <div class="hero-content">
                 <h1 class="hero-title">Laplace's Demon</h1>
-                <p class="hero-subtitle">Transform your ideas into reality with our powerful AI crypto analyzer!</p>
+                <p class="hero-subtitle">Understand your investments. Detect crypto scam coins.</p>
               </div>
               <div class="input-container">
+                <div class="input-group">
                 <div class="input-row">
-                  <textarea class="text-input" placeholder="Enter your prompt here..."></textarea>
-                  <button class="generate-btn">→</button>
-                </div>
+                  <textarea id="inputText" class="text-input" placeholder="Enter your prompt here..."></textarea>
+                  <button id="analyzeButton" class="generate-btn">→</button>
+                </div></div>
                 <div class="prompt-section">
                   <p class="prompt-label">Try these prompts:</p>
                   <div class="prompt-chips">
-                    <div class="prompt-chip">Write a blog post</div>
-                    <div class="prompt-chip">Create a story</div>
-                    <div class="prompt-chip">Generate code</div>
-                    <div class="prompt-chip">Design ideas</div>
-                    <div class="prompt-chip">Business plan</div>
+                    <div class="prompt-chip" data-prompt="DogeCoin">DogeCoin</div>
+                    <div class="prompt-chip" data-prompt="Quest Option">Quest Option</div>
+                    <div class="prompt-chip" data-prompt="CoinFred">CoinFred</div>
+                    <div class="prompt-chip" data-prompt="BTCBOXOHN">BTCBOXOHN</div>
+                    <div class="prompt-chip" data-prompt="Finaclefx">Finaclefx</div>
                   </div>
                 </div>
-              </div>
             </div>
-          </div>
+            </div>
+            <div class="results-console">
+                <div class="container"></div>
+                <div class="console-output">
+                    <div id="result"></div>
+                </div>
+                <div id="probability" class="console-section">
+                  <canvas id="probabilityChart"></canvas>
+                </div>
+                <div class="history-section console-section">
+                  <h3>Query History</h3>
+                  <ul id="historyList"></ul>
+                </div>
+              </div>
         </body>
      </html>
 

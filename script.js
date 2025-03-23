@@ -1,7 +1,8 @@
 /* script.js */
 document.addEventListener('DOMContentLoaded', function() {
     const analyzeButton = document.getElementById('analyzeButton');
-    const clearButton = document.getElementById('clearButton');
+    const promptChips = document.querySelectorAll('.prompt-chip');
+    // const clearButton = document.getElementById('clearButton');
     const inputText = document.getElementById('inputText');
     const resultDiv = document.getElementById('result');
     const historyList = document.getElementById('historyList');
@@ -11,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const loadingIndicator = document.createElement('div');
     loadingIndicator.textContent = 'Analyzing...';
     loadingIndicator.style.display = 'none';
+    loadingIndicator.style.color = 'white';
     document.querySelector('.container').appendChild(loadingIndicator);
 
     analyzeButton.addEventListener('click', async function() {
@@ -45,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
             queries.push({ query: text, result: data.message, status: data.status, probability: data.probability });
             updateHistory();
             updateProbability(data.probability);
-            document.getElementById('copyButton').style.display = 'block';
+            // document.getElementById('copyButton').style.display = 'block';
 
         } catch (error) {
             loadingIndicator.style.display = 'none';
@@ -56,14 +58,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    clearButton.addEventListener('click', function() {
-        inputText.value = '';
-        resultDiv.innerHTML = '';
-        resultDiv.className = '';
-        probabilityDiv.style.display = 'none';
-        document.getElementById('copyButton').style.display = 'none';
-    });
+    // clearButton.addEventListener('click', function() {
+    //     inputText.value = '';
+    //     resultDiv.innerHTML = '';
+    //     resultDiv.className = '';
+    //     probabilityDiv.style.display = 'none';
+    //     document.getElementById('copyButton').style.display = 'none';
+    // });
 
+    promptChips.forEach(chip => {
+        chip.addEventListener('click', function() {
+            inputText.value = this.dataset.prompt;
+            // Optional: Focus the input after filling
+            inputText.focus();
+        });
+    });
     function updateHistory() {
         historyList.innerHTML = '';
         queries.forEach(item => {
@@ -116,17 +125,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Copy to clipboard functionality
-    const copyButton = document.createElement('button');
-    copyButton.id = 'copyButton';
-    copyButton.textContent = 'Copy';
-    copyButton.style.display = 'none';
-    document.querySelector('.input-group').appendChild(copyButton);
+    // // Copy to clipboard functionality
+    // const copyButton = document.createElement('button');
+    // copyButton.id = 'copyButton';
+    // copyButton.textContent = 'Copy';
+    // copyButton.style.display = 'none';
+    // document.querySelector('.input-group').appendChild(copyButton);
 
-    copyButton.addEventListener('click', function() {
-        const resultText = document.getElementById('result').textContent;
-        navigator.clipboard.writeText(resultText)
-            .then(() => alert('Result copied to clipboard!'))
-            .catch(err => console.error('Could not copy text: ', err));
-    });
+    // copyButton.addEventListener('click', function() {
+    //     const resultText = document.getElementById('result').textContent;
+    //     navigator.clipboard.writeText(resultText)
+    //         .then(() => alert('Result copied to clipboard!'))
+    //         .catch(err => console.error('Could not copy text: ', err));
+    // });
 });
