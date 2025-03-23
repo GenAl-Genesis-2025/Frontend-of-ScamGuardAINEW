@@ -99,7 +99,8 @@ body {
     justify-content: center;
     align-items: flex-start;
     min-height: 100vh;
-    background-image: url('bg.png');
+    /*background-image: url('bg.png');*/
+    background-color: rgba(0,0,0);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed; 
@@ -128,7 +129,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     min-height: 100vh;
-    background-image: url('./bg.png');
+    /*background-image: url('./bg.png');*/
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
