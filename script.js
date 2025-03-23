@@ -1,4 +1,3 @@
-
 /* script.js */
 document.addEventListener('DOMContentLoaded', function() {
     const analyzeButton = document.getElementById('analyzeButton');
@@ -14,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loadingIndicator.style.display = 'none';
     document.querySelector('.container').appendChild(loadingIndicator);
 
-    analyzeButton.addEventListener('click', function() {
+    analyzeButton.addEventListener('click', async function() {
         const text = inputText.value;
         if (!text.trim()) {
             alert('Please enter text to analyze.');
@@ -25,18 +24,19 @@ document.addEventListener('DOMContentLoaded', function() {
         resultDiv.innerHTML = '';
         probabilityDiv.style.display = 'none';
 
-        fetch('http://localhost:5000/api/setUserQuery', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ text: text }),
-        })
-        .then(response => {
+        try {
+            const response = await fetch('http://localhost:5001/api/setUserQuery', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ text: text }),
+            });
+
             if (!response.ok) {
                 throw new Error('Network response was not ok.');
             }
-            return response.json();
-        })
-        .then(data => {
+
+            const data = await response.json();
+
             loadingIndicator.style.display = 'none';
             resultDiv.innerHTML = data.message;
             resultDiv.className = '';
@@ -46,14 +46,14 @@ document.addEventListener('DOMContentLoaded', function() {
             updateHistory();
             updateProbability(data.probability);
             document.getElementById('copyButton').style.display = 'block';
-        })
-        .catch(error => {
+
+        } catch (error) {
             loadingIndicator.style.display = 'none';
             console.error('Error:', error);
             resultDiv.innerHTML = 'An error occurred during analysis.';
             resultDiv.className = 'result-danger';
             probabilityDiv.style.display = 'none';
-        });
+        }
     });
 
     clearButton.addEventListener('click', function() {
