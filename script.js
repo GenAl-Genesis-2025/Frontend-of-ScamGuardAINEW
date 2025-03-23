@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const data = await response.json();
 
             loadingIndicator.style.display = 'none';
-            resultDiv.innerHTML = data.message;
+            resultDiv.innerHTML = formatText(data.message);
             resultDiv.className = '';
             resultDiv.classList.add('result-' + data.status);
 
@@ -73,7 +73,12 @@ document.addEventListener('DOMContentLoaded', function() {
             historyList.appendChild(listItem);
         });
     }
-
+    function formatText(text) {
+        // Replace **text** with <strong>text</strong> for bold
+        text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        return text;
+    }
+    
     function updateProbability(probability) {
         probabilityDiv.style.display = 'block';
         if (probabilityChart) {
