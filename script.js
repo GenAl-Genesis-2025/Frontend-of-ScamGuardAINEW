@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         probabilityDiv.style.display = 'none';
 
         try {
-            const response = await fetch('http://localhost:5001/api/setUserQuery', {
+            const response = await fetch('https://backend-1-3okw.onrender.com/api/setUserQuery', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ text: text }),
